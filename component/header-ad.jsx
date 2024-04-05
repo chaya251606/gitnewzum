@@ -5,15 +5,10 @@ const HeaderAds = () => {
     <>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></Script>
       <Script>
-        if (!window.dataLayer) {
-          window.dataLayer = []
-        }
-
-        function gtag() {
-          window.dataLayer.push.apply(window.dataLayer, arguments)
-        }
-
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+
         gtag('config', 'G-VL0P71V9DC');
       </Script>
     </>
