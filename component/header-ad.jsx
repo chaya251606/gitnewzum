@@ -5,22 +5,16 @@ const HeaderAds = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       (adsbygoogle = window.adsbygoogle || []).push({});
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VL0P71V9DC');
     }
   }, []);
 
   return (
     <>
-      <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3619133031508264"
-              crossOrigin="anonymous"></Script>
-      <ins className="adsbygoogle"
-           style={{ display: 'block' }}
-           data-ad-client="ca-pub-3619133031508264"
-           data-ad-slot="9545453925"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <Script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </Script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></script>
     </>
   )
 }
