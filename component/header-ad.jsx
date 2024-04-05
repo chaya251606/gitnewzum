@@ -4,7 +4,8 @@ import Script from 'next/script';
 const HeaderAds = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      (adsbygoogle = window.adsbygoogle || []).push({});
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      (window.dataLayer = window.dataLayer || [])
       function gtag(){dataLayer.push(arguments)}
       gtag('js', new Date());
 
