@@ -83,17 +83,10 @@ const Post = (props) => {
     else str = str.toString()
     return str.replace(/(<([^>]+)>)/gi, '').replace(/\[[^\]]*\]/, '')
   }
-  const headerAdContent = '<Script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></Script>\n' +
-    '      <Script>\n' +
-    '        window.dataLayer = window.dataLayer || [];\n' +
-    '        function gtag(){dataLayer.push(arguments)}\n' +
-    '        gtag(\'js\', new Date());\n' +
-    '\n' +
-    '        gtag(\'config\', \'G-VL0P71V9DC\');\n' +
-    '      </Script>'
 
   return (
     <>
+      <HeaderAds/>
       <Head>
         <meta property="og:title" content={post.title}/>
         <link rel="canonical" href={`https://${host}/${path}`}/>
@@ -112,7 +105,6 @@ const Post = (props) => {
         <title>{post.title}</title>
       </Head>
       <div className="post-container">
-        <article dangerouslySetInnerHTML={{ __html: headerAdContent }}/>
         <div className={styles.style_header}>
         <div className={styles.home_container}>
             <div className={styles.header_search}>
