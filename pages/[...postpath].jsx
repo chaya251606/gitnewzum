@@ -102,19 +102,7 @@ const Post = (props) => {
           content={post.featuredImage?.node?.altText || post.title}
         />
         <title>{post.title}</title>
-        <script async
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3619133031508264"
-                crossOrigin="anonymous"></script>
-        <ins className="adsbygoogle"
-             style={{display: 'block'}}
-             data-ad-client="ca-pub-3619133031508264"
-             data-ad-slot="9545453925"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-          window.adsbygoogle = window.adsbygoogle || []
-          adsbygoogle.push({});
-        </script>
+        <HeaderAds/>
       </Head>
       <div className="post-container">
         <div className={styles.style_header}>
