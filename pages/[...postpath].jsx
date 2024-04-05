@@ -25,7 +25,7 @@ const getEndpoint = async () => {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const endpoint = await getEndpoint(ctx)
+  const endpoint = await getEndpoint()
   const graphQLClient = new GraphQLClient(
     endpoint.includes('graphql') ? endpoint : endpoint.concat('/graphql')
   )
@@ -86,7 +86,6 @@ const Post = (props) => {
 
   return (
     <>
-      <HeaderAds/>
       <Head>
         <meta property="og:title" content={post.title}/>
         <link rel="canonical" href={`https://${host}/${path}`}/>
@@ -103,10 +102,23 @@ const Post = (props) => {
           content={post.featuredImage?.node?.altText || post.title}
         />
         <title>{post.title}</title>
+        <script async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3619133031508264"
+                crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+             style={{display: 'block'}}
+             data-ad-client="ca-pub-3619133031508264"
+             data-ad-slot="9545453925"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          window.adsbygoogle = window.adsbygoogle || []
+          adsbygoogle.push({});
+        </script>
       </Head>
       <div className="post-container">
         <div className={styles.style_header}>
-        <div className={styles.home_container}>
+          <div className={styles.home_container}>
             <div className={styles.header_search}>
               <div style={{ marginLeft: '30px' }}>
                 <Link href="/">
