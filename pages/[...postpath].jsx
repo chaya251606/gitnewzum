@@ -86,6 +86,7 @@ const Post = (props) => {
 
   return (
     <>
+      <HeaderAds/>
       <Head>
         <meta property="og:title" content={post.title}/>
         <link rel="canonical" href={`https://${host}/${path}`}/>
@@ -101,9 +102,10 @@ const Post = (props) => {
           property="og:image:alt"
           content={post.featuredImage?.node?.altText || post.title}
         />
-        <title>{post.title}</title>
         <HeaderAds/>
+        <title>{post.title}</title>
       </Head>
+      <HeaderAds/>
       <div className="post-container">
         <HeaderAds/>
         <div className={styles.style_header}>
