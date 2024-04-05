@@ -20,17 +20,17 @@ const AfterContentAds = dynamic(() => import('../component/after-content-ad'), {
   ssr: false,
 });
 
-const getEndpoint = async (ctx: any): Promise<string> => {
+const getEndpoint = async () => {
   return process.env?.GRAPHQL_ENDPOINT || ''
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps = async (ctx) => {
   const endpoint = await getEndpoint(ctx)
   const graphQLClient = new GraphQLClient(
     endpoint.includes('graphql') ? endpoint : endpoint.concat('/graphql')
   )
 
-  const pathArr = ctx.query.postpath as Array<string>
+  const pathArr = ctx.query.postpath
   const path = pathArr.join('/')
 
   const query = gql`
@@ -73,18 +73,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   }
 }
 
-interface PostProps {
-  post: any;
-  host: string;
-  path: string;
-}
-
-const Post: React.FC<PostProps> = (props) => {
+const Post = (props) => {
   const { post, host, path } = props
   const content = addAdsAfterImgTag(post.content)
 
   // to remove tags from excerpt
-  const removeTags = (str: string) => {
+  const removeTags = (str) => {
     if (str === null || str === '') return ''
     else str = str.toString()
     return str.replace(/(<([^>]+)>)/gi, '').replace(/\[[^\]]*\]/, '')
@@ -159,13 +153,13 @@ const Post: React.FC<PostProps> = (props) => {
         </div>
         <article dangerouslySetInnerHTML={{ __html: content }}/>
         <AfterContentAds/>
-      </>
+      </div>
       <FooterAd/>
     </>
   )
 }
 
-function addAdsAfterImgTag(htmlString: string) {
+function addAdsAfterImgTag(htmlString) {
   return htmlString.replaceAll(/(<img[^>]*>)/g, '$1<div>\n' +
     '            <div id="M933560ScriptRootC1569962"></div>\n' +
     '            <Script src="https://jsc.adskeeper.com/s/p/sport247.boonovel.com.1569962.js" async></Script>\n' +
