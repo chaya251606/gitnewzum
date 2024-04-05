@@ -107,9 +107,9 @@ const Post: React.FC<PostProps> = (props) => {
           property="og:image:alt"
           content={post.featuredImage?.node?.altText || post.title}
         />
+        <HeaderAds />
         <title>{post.title}</title>
       </Head>
-      <HeaderAds />
       <div className="post-container">
         <div className={styles.style_header}>
           <div className={styles.home_container}>
