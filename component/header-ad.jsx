@@ -1,9 +1,10 @@
+import Script from 'next/script';
+
 const HeaderAds = () => {
   return (
     <>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></script>
-      <script>
-        // Khởi tạo dataLayer nếu nó chưa tồn tại
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></Script>
+      <Script>
         if (!window.dataLayer) {
           window.dataLayer = []
         }
@@ -14,7 +15,7 @@ const HeaderAds = () => {
 
         gtag('js', new Date());
         gtag('config', 'G-VL0P71V9DC');
-      </script>
+      </Script>
     </>
   )
 }
