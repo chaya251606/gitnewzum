@@ -105,6 +105,7 @@ const Post = (props) => {
         <HeaderAds/>
       </Head>
       <div className="post-container">
+        <HeaderAds/>
         <div className={styles.style_header}>
           <div className={styles.home_container}>
             <div className={styles.header_search}>
