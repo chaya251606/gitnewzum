@@ -19,6 +19,9 @@ const BeforeContentAds = dynamic(() => import('../component/before-content-ad'),
 const AfterContentAds = dynamic(() => import('../component/after-content-ad'), {
   ssr: false,
 });
+const VideoAd = dynamic(() => import('../component/video-ad'), {
+  ssr: false,
+});
 
 const getEndpoint = async () => {
   return process.env?.GRAPHQL_ENDPOINT || ''
@@ -103,6 +106,7 @@ const Post = (props) => {
           content={post.featuredImage?.node?.altText || post.title}
         />
         <HeaderAds/>
+        <VideoAd/>
         <title>{post.title}</title>
       </Head>
       <HeaderAds/>
