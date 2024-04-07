@@ -190,11 +190,11 @@ const Home: NextPage = (props: any) => {
 
       <footer className={styles.footer_home}>
         <div className={styles.footer_menu}>
-          <a href="#">Privacy Policy</a>
+          <Link href="/privacy-policy">Privacy Policy</Link>
 
-          <a href="#">Terms and Conditions</a>
+          <Link href="/term-condition">Terms and Conditions</Link>
 
-          <a href="#">Contact US</a>
+          <Link href="/contact">Contact US</Link>
         </div>
 
         <div className={styles.site_info}>
