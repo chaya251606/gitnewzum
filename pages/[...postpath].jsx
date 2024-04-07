@@ -111,6 +111,7 @@ const Post = (props) => {
       </Head>
       <HeaderAds/>
       <div className="post-container">
+        <VideoAd/>
         <HeaderAds/>
         <div className={styles.style_header}>
           <div className={styles.home_container}>
