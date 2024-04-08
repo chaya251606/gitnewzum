@@ -16,6 +16,7 @@ const HeaderAds = () => {
   return (
     <>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></script>
+      <script defer data-domain="traffict4.com" src="https://plausible.io/js/script.js"></script>
     </>
   )
 }
