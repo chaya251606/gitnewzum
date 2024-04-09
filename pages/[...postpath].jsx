@@ -7,9 +7,9 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic';
 import Script from 'next/script'
 
-const HeaderAds = dynamic(() => import('../component/header-ad'), {
-  ssr: false,
-});
+// const HeaderAds = dynamic(() => import('../component/header-ad'), {
+//   ssr: false,
+// });
 const FooterAd = dynamic(() => import('../component/footer-ad'), {
   ssr: false,
 });
@@ -89,7 +89,6 @@ const Post = (props) => {
 
   return (
     <>
-      <HeaderAds/>
       <Head>
         <meta property="og:title" content={post.title}/>
         <link rel="canonical" href={`https://${host}/${path}`}/>
@@ -105,14 +104,23 @@ const Post = (props) => {
           property="og:image:alt"
           content={post.featuredImage?.node?.altText || post.title}
         />
-        <HeaderAds/>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VL0P71V9DC"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-VL0P71V9DC');
+              `,
+          }}
+        />
         <VideoAd/>
         <title>{post.title}</title>
       </Head>
-      <HeaderAds/>
       <div className="post-container">
         <VideoAd/>
-        <HeaderAds/>
         <div className={styles.style_header}>
           <div className={styles.home_container}>
             <div className={styles.header_search}>
