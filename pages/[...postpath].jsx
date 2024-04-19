@@ -116,6 +116,7 @@ const Post = (props) => {
               `,
           }}
         />
+	<script defer data-domain="mamamath.com" src="https://plausible.io/js/script.js"></script>
         <VideoAd/>
         <title>{post.title}</title>
       </Head>
