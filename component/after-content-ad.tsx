@@ -9,7 +9,7 @@ const AfterContentAds: NextPage = () => {
     <ins className="adsbygoogle"
         style={{display: 'block'}}
         data-ad-client="ca-pub-3619133031508264"
-        data-ad-slot="4988474894"
+        data-ad-slot="7197569719"
         data-ad-format="auto"
         data-full-width-responsive="true"></ins>
     <Script>
